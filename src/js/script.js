@@ -26,11 +26,11 @@ function playHighLowGame() {
             playerGuess = parseInt(window.prompt("Guess a number between 1 and 100"));
 
             if (playerGuess > 0 && playerGuess <= 100) {
-                console.log("The entered value is a number:", playerGuess);
                 // Proceed with using the numerical value.
                 if (playerGuess == targetNumber) {
                     window.alert("You won!");
                     success = true;
+                    playAgain(gameModeChoice);
                 }
                 else if (playerGuess > targetNumber) {
                     cnt++;
@@ -50,10 +50,14 @@ function playHighLowGame() {
                 }
             } else {
                 window.alert("The entered value is not a valid number.");
+                let continueGame = window.confirm("Would you like to continue to play this game round?");
+                if (continueGame == false) {
+                    window.alert("Thanks for playing.");
+                    success = true;
+                }
             }
         }
     }
-    playAgain(gameModeChoice);
 }
 
 function playAgain(gameMode) {
