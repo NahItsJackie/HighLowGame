@@ -34,7 +34,7 @@ function playHighLowGame() {
                 }
                 else if (playerGuess > targetNumber) {
                     cnt++;
-                    if (playerGuess <= targetNumber + 5) {
+                    if (gameModeChoice == 'normal' && (playerGuess <= targetNumber + 5)) {
                         window.alert("🔥 Very close! But a little too high.")
                     } else {
                         window.alert("Your guess is too high");
@@ -42,7 +42,7 @@ function playHighLowGame() {
                 }
                 else if (playerGuess < targetNumber) {
                     cnt++;
-                    if (playerGuess >= targetNumber - 5) {
+                    if (gameModeChoice == 'normal' && (playerGuess >= targetNumber - 5)) {
                         window.alert("🔥 Very close! But a little low.")
                     } else {
                         window.alert("Your guess is too low");
